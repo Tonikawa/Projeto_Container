@@ -18,8 +18,8 @@ def calcular_idade():
     </form>
     '''
 def calcula_idade(data_nascimento, data_atual):
-    data_nascimento= datetime.strptime(data_nascimento, "%Y-%m-%d")
-    data_atual = datetime.strptime(data_atual, "%Y-%m-%d" )
+    data_nascimento= datetime.strptime(data_nascimento, "%d-%m-%Y")
+    data_atual = datetime.strptime(data_atual, "%d-%m-%Y" )
     
     idade = data_atual.year - data_nascimento.year
     if data_atual.month < data_nascimento.month or (data_atual.month == data_nascimento.month and data_atual.day < data_nascimento.day):
