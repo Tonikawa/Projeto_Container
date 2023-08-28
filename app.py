@@ -9,14 +9,9 @@ def calcular_idade():
         data_nascimento = request.form["data_nascimento"]
         data_atual = request.form["data_atual"]
         idade = calcula_idade(data_nascimento, data_atual)
-        return f"A idade é: {idade} anos"
-    return '''
-    <form method="post">
-        Data de Nascimento: <input type="date" name="data_nascimento"><br>
-        Data Atual: <input type="date" name="data_atual"><br>
-        <input type="submit" value="Calcular Idade">
-    </form>
-    '''
+        return render_template("resultado.html", idade=idade)
+    return render_template("formulario.html")
+    
 def calcula_idade(data_nascimento, data_atual):
     data_nascimento= datetime.strptime(data_nascimento, "%d-%m-%Y")
     data_atual = datetime.strptime(data_atual, "%d-%m-%Y" )
