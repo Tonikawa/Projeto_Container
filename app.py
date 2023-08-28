@@ -8,7 +8,7 @@ def calcular_idade():
     if request.method == "POST":
         data_nascimento = request.form["data_nascimento"]
         data_atual = request.form["data_atual"]
-        idade = calcular_idade(data_nascimento, data_atual)
+        idade = calcula_idade(data_nascimento, data_atual)
         return f"A idade é: {idade} anos"
     return '''
     <form method="post">
@@ -17,9 +17,9 @@ def calcular_idade():
         <input type="submit" value="Calcular Idade">
     </form>
     '''
-def calcular_idade(data_nascimento, data_atual):
-    data_nascimento= datetime.strptime(data_nascimento, "%Y-%m-%d")
-    data_atual = datetime.strptime(data_atual, "%Y-%m-%d" )
+def calcula_idade(data_nascimento, data_atual):
+    data_nascimento= datetime.strptime(data_nascimento, "%d-%m-%Y")
+    data_atual = datetime.strptime(data_atual, "%d-%m-%Y" )
     
     idade = data_atual.year - data_nascimento.year
     if data_atual.month < data_nascimento.month or (data_atual.month == data_nascimento.month and data_atual.day < data_nascimento.day):
