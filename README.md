@@ -1,5 +1,6 @@
 # Projeto_Container
-Criando um Aplicativo usando Flask e Docker simples.
+Criando um Aplicativo usando Python e Flask.
+Contâiner: Docker
 Esse aplicativo irá ser hospedado na porta 8000:8000.
 Será fornecida pelo usuario duas datas: a data de nascimento e a data atual. O aplicativo irá calcular e devolver a idade do úsuario.
 
